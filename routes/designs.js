@@ -6,16 +6,34 @@ var User = require(".././models/user");
 
 //INDEX ROUTES
 router.get("/designs", function(req, res){
+    var noMatch = null;
+    if(req.query.search) {
+        const regex = new RegExp(escapeRegex(req.query.search), 'gi');
+        
+        Design.find({"sharepointid": regex}, function(err, founddesigns){
+           if(err){
+               console.log(err);
+           } else {
+              if(founddesigns.length < 1) {
+                  noMatch = "No designs match that query, please try again.";
+              }
+              res.render("designs/index",{designs:founddesigns, currentUser: req.user, noMatch: noMatch});
+           }
+        });
+    } else {
+
     Design.find({}, function(err, designs){
         if (err){
             console.log(err);
         } else {
-            res.render("designs/index", {designs: designs, currentUser: req.user});
+            res.render("designs/index", {designs: designs, currentUser: req.user, noMatch: noMatch});
         }
     });
+}
 });
 // NEW ROUTE
 router.get("/designs/new", isLoggedIn, function(req, res) {
+        
         var author = {
             id: req.user._id,
             username: req.user.username
@@ -109,4 +127,7 @@ router.delete("/designs/:id", function(req, res){
     res.redirect("/login");
  }
  
+ function escapeRegex(text) {
+    return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
+};
  module.exports = router;

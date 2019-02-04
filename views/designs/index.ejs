@@ -1,32 +1,46 @@
 <% include .././partials/header %>
 
-
-<% designs.forEach(function(design){ %>
-    <div class="ui main text container segment">
-        <p><%= design.sharepointid %></p>
-        <p><%= design.type %></p>
-        <p><%= design.moagent %></p>
-        <p><%= design.enduser %></p>
-        <p><%= design.systemtype %></p>
-        <p><%= design.notes %></p>
-        <p><%= design.date %></p>
-        <p><%= design.engineer %></p>
-        <p><%= design.headtype %></p>
-        <p><%= design.apwidth %></p>
-        <p><%= design.apheight %></p>
-        <p><%= design.convheight %></p>
-        <p><%= design.convlength %></p>
-        <p><%= design.handing %></p>
-        <p><%= design.belttype %></p>
-        <p><%= design.product %></p>
-        <p><%= design.packaging %></p>
-        <p><%= design.designid %></p>
-        <p><%= design.sapnum %></p>
-        <p><%= design.author.username %></p>
-        <a href="/designs/<%= design._id %>">More info</a>
-       
-       
+<div class="row text-center" style="display:flex; flex-wrap: wrap;">
+    <div>
+        <% if(noMatch !== null) { %>
+        <h3><%= noMatch %></h3>
+        <p>
+        <form action="/designs" method="GET" class="form-inline">
+            <div class="form-group">
+                <input type="text" name="search" placeholder="design search..." >
+                <input type="submit" value="Search">
+            </div>
+        </form>
+        </p>
+        <% } %>
     </div>
-<% }) %>
 
+    <% designs.forEach(function(design){ %>
+        <div class="ui main text container segment">
+            <p><%= design.sharepointid %></p>
+            <p><%= design.type %></p>
+            <p><%= design.moagent %></p>
+            <p><%= design.enduser %></p>
+            <p><%= design.systemtype %></p>
+            <p><%= design.notes %></p>
+            <p><%= design.date %></p>
+            <p><%= design.engineer %></p>
+            <p><%= design.headtype %></p>
+            <p><%= design.apwidth %></p>
+            <p><%= design.apheight %></p>
+            <p><%= design.convheight %></p>
+            <p><%= design.convlength %></p>
+            <p><%= design.handing %></p>
+            <p><%= design.belttype %></p>
+            <p><%= design.product %></p>
+            <p><%= design.packaging %></p>
+            <p><%= design.designid %></p>
+            <p><%= design.sapnum %></p>
+            <p><%= design.author.username %></p>
+            <a href="/designs/<%= design._id %>">More info</a>
+        
+        
+        </div>
+    <% }) %>
+</div>
 <% include .././partials/footer %>

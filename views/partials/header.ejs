@@ -19,6 +19,17 @@
                 <a href="/logout" class="item">Logout</a>
                 <span class="item">Signed In As <%= currentUser.username %></span>
                 <% }%>
+                <p>
+                        <form action="/designs" method="GET" class="form-inline">
+                            <div class="form-group">
+                                <input type="text" name="search" placeholder="design search..." >
+                                <input type="submit" value="Search">
+                            </div>
+                        </form>
+                        </p>
+
+            
+               
             </div>
             
         </div>
