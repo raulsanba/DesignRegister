@@ -1,0 +1,87 @@
+<% include .././partials/header %>
+    <div class="ui main text container segment">
+         <div class="ui huge header">Add new design</div>
+         <form class="ui form" action="/designs" method="POST">
+             <div class="field">
+                <label>Sharepoint ID</label>
+                <input type="text" name="design[sharepointid]" placeholder="Sharepoint ID">
+             </div>
+             <div class="field">
+                <label>Type</label>
+                <input type="text" name="design[type]" placeholder="Type">
+            </div>    
+            <div class="field">
+                <label>MO agent</label>
+                <input type="text" name="design[moagent]" placeholder="MO agent">
+            </div>
+            <div class="field">
+                <label>End user</label>    
+                <input type="text" name="design[enduser]" placeholder="End user">
+            </div>
+            <div class="field">
+                <label>System type</label>    
+                <input type="text" name="design[systemtype]" placeholder="System type">
+            </div>
+            <div class="field">
+                <label>Notes</label>    
+                <textarea name="design[notes]"></textarea>
+            </div>
+            <div class="field">
+                <label>Date</label>    
+                <input type="date" name="design[date]" placeholder="Date">
+            </div>
+            <div class="field">
+                <label>Engineer</label>    
+                <input type="text" name="design[Engineer]" placeholder="Engineer">
+            </div>
+            <div class="field">
+                <label>Head type</label>    
+                <input type="text" name="design[headtype]" placeholder="Head type">
+            </div>
+            <div class="field">
+                <label>Aperture width</label>    
+                <input type="text" name="design[apwidth]" placeholder="Aperture width">
+            </div>
+            <div class="field">
+                <label>Aperture height</label>    
+                <input type="text" name="design[apheight]" placeholder="Aperture height">
+            </div>
+            <div class="field">
+                <label>Conveyor height</label>    
+                <input type="text" name="design[convheight]" placeholder="Conveyor height">
+             </div>   
+            <div class="field">
+                <label>Conveyor length</label>    
+                <input type="text" name="design[convlength]" placeholder="Conveyor length">
+            </div>    
+            <div class="field">
+                <label>Handing</label>    
+                <input type="text" name="design[handing]" placeholder="Handing">
+             </div>   
+            <div class="field">
+                <label>Belt type</label>    
+                <input type="text" name="design[belttype]" placeholder="Belt type">
+             </div>   
+            <div class="field">
+                <label>Product</label>    
+                <input type="text" name="design[product]" placeholder="Product">
+            </div>    
+            <div class="field">
+                <label>Packaging</label>    
+                <input type="text" name="design[packaging]" placeholder="Packaging">
+             </div>   
+            <div class="field">
+                <label>Design id</label>    
+                <input type="text" name="design[designid]" placeholder="Design id">
+             </div>   
+            <div class="field">
+                <label>SAP number</label>    
+                <input type="text" name="design[sapnum]" placeholder="SAP number">
+             </div>   
+            <div class="field">
+                <button class="ui orange big basic button">SAVE</button>
+            </div>     
+         </form>
+    </div>
+    
+<% include .././partials/footer %>    

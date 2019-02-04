@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title></title>
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+        <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.bundle.min.js">
+        <link rel="stylesheet" type="text/css" href="/stylesheets/app.css">
+        
+    </head>
+    <body>
+        <div class="ui fixed inverted menu">
+            <div class="ui container">
+                <div class="header item"><i class="globe icon"></i>Design Register</div>
+                <a href="/" class="item">HOME</a>
+                <% if(!currentUser){%>
+                <a href="/login" class="item">Login</a> 
+                <a href="/register" class="item">Sign Up</a>
+                <% } else { %>
+                <a href="/designs/new" class="item">New Design</a>
+                <a href="/logout" class="item">Logout</a>
+                <span class="item">Signed In As <%= currentUser.username %></span>
+                <% }%>
+            </div>
+            
+        </div>
+     
+        
+       

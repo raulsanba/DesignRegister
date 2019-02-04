@@ -1,0 +1,87 @@
+<% include .././partials/header %>
+    <div class="ui main text container segment">
+         <div class="ui huge header">Edit design</div>
+         <form class="ui form" action="/designs/<%= design._id %>?_method=PUT" method="POST">
+             <div class="field">
+                <label>Sharepoint ID</label>
+                <input type="text" name="design[sharepointid]" value="<%= design.sharepointid %>">
+             </div>
+             <div class="field">
+                <label>Type</label>
+                <input type="text" name="design[type]" value="<%= design.type %>">
+            </div>    
+            <div class="field">
+                <label>MO agent</label>
+                <input type="text" name="design[moagent]" value="<%= design.moagent %>">
+            </div>
+            <div class="field">
+                <label>End user</label>    
+                <input type="text" name="design[enduser]" value="<%= design.enduser %>">
+            </div>
+            <div class="field">
+                <label>System type</label>    
+                <input type="text" name="design[systemtype]" value="<%= design.systemtype %>">
+            </div>
+            <div class="field">
+                <label>Notes</label>    
+                <textarea name="design[notes]"><%= design.notes%></textarea>
+            </div>
+            <!--<div class="field">-->
+            <!--    <label>Date</label>    -->
+            <!--    <input type="date" name="design[date]" value="<">-->
+            <!--</div>-->
+            <!--<div class="field">-->
+            <!--    <label>Engineer</label>    -->
+            <!--    <input type="text" name="design[engineer]" value="<%= design.engineer %>">-->
+            <!--</div>-->
+            <div class="field">
+                <label>Head type</label>    
+                <input type="text" name="design[headtype]" value="<%= design.headtype %>">
+            </div>
+            <div class="field">
+                <label>Aperture width</label>    
+                <input type="text" name="design[apwidth]" value="<%= design.apwidth %>">
+            </div>
+            <div class="field">
+                <label>Aperture height</label>    
+                <input type="text" name="design[apheight]" value="<%= design.apheight %>">
+            </div>
+            <div class="field">
+                <label>Conveyor height</label>    
+                <input type="text" name="design[convheight]" value="<%= design.convheight %>">
+             </div>   
+            <div class="field">
+                <label>Conveyor length</label>    
+                <input type="text" name="design[convlength]" value="<%= design.convlength %>">
+            </div>    
+            <div class="field">
+                <label>Handing</label>    
+                <input type="text" name="design[handing]" value="<%= design.handing %>">
+             </div>   
+            <div class="field">
+                <label>Belt type</label>    
+                <input type="text" name="design[belttype]" value="<%= design.belttype %>">
+             </div>   
+            <div class="field">
+                <label>Product</label>    
+                <input type="text" name="design[product]" value="<%= design.product %>">
+            </div>    
+            <div class="field">
+                <label>Packaging</label>    
+                <input type="text" name="design[packaging]" value="<%= design.packaging %>">
+             </div>   
+            <div class="field">
+                <label>Design id</label>    
+                <input type="text" name="design[designid]" value="<%= design.designid %>">
+             </div>   
+            <div class="field">
+                <label>SAP number</label>    
+                <input type="text" name="design[sapnum]" value="<%= design.sapnum %>">
+             </div>   
+            <div class="field">
+                <button class="ui orange big basic button">SAVE</button>
+            </div>     
+         </form>
+    </div>
+    
+<% include .././partials/footer %>    
