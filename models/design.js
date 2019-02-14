@@ -1,7 +1,7 @@
 var mongoose = require("mongoose");
 //MONGOOSE/MODEL CONFIG
 var designSchema = new mongoose.Schema({
-   sharepointid: String,
+   sharepointid: Integer,
    type: String,
    moagent: String,
    enduser: String,
