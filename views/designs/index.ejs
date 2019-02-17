@@ -1,6 +1,6 @@
 <% include .././partials/header %>
 
-<div class="row text-center" style="display:flex; flex-wrap: wrap;">
+
     <div>
         <% if(noMatch !== null) { %>
         <h3><%= noMatch %></h3>
@@ -16,7 +16,7 @@
     </div>
 
     <% designs.forEach(function(design){ %>
-        <div class="ui main text container segment">
+        <div class="container d-flex justify-content-center">
             <p><%= design.sharepointid %></p>
             <p><%= design.type %></p>
             <p><%= design.moagent %></p>
