@@ -19,97 +19,119 @@
                 <label>Sharepoint ID</label>
                 <input type="number" min="0" step="1" class="form-control" id="validationCustom01" name="design[sharepointid]" placeholder="Sharepoint ID" required>
                 <div class="invalid-feedback">
-                        Please choose a Sharepoint ID!
+                        Please enter a Sharepoint ID!
                 </div>
              </div>
              <div class="form-group">
+                <label>Design id</label>    
+                <input type="text" class="form-control" id="validationCustom01" name="design[designid]" placeholder="Design id" required>
+                <div class="invalid-feedback">
+                        Please enter a Design id!
+                </div>
+             </div>   
+            <div class="form-group">
+                <label>SAP number</label>    
+                <input type="text" class="form-control" id="validationCustom01" name="design[sapnum]" placeholder="SAP number" required>
+                <div class="invalid-feedback">
+                        Please enter a SAP number!
+                </div>
+             </div>  
+             <div class="form-group" >
+                    <label>Sales order number</label>
+                    <input type="number" min="0" step="1" class="form-control" id="validationCustom01" name="design[so]" placeholder="Sales order number" required>
+                    <div class="invalid-feedback">
+                            Please enter a Sales order number!
+                    </div>
+                 </div>
+             <div class="form-group">
                 <label>Type</label>
-                <input type="text" class="form-control" id="validationCustom01" name="design[type]" placeholder="Type" required>
+                <select class="form-control" id="validationCustom01" name="design[type]" required>
+                        <option value="">Choose a type...</option>
+                        <option value="standard">Standard system</option>
+                        <option value="special">Special system</option>
+                    </select>
                 <div class="invalid-feedback">
                         Please choose a Type!
                 </div>
-            </div>    
+            </div> 
             <div class="form-group">
-                <label>MO agent</label>
-                <input type="text" class="form-control" id="validationCustom01" name="design[moagent]" placeholder="MO agent" required>
-                <div class="invalid-feedback">
-                        Please choose a MO agent!
-                </div>
-            </div>
-            <div class="form-group">
-                <label>End user</label>    
-                <input type="text" class="form-control" id="validationCustom01" name="design[enduser]" placeholder="End user" required>
-                <div class="invalid-feedback">
-                        Please choose a End user!
-                </div>
-            </div>
-            <div class="form-group">
-                <label>System type</label> 
-                    <select class="form-control" id="validationCustom01" name="design[systemtype]" required>
-                        <option value="">System Type</option>
-                        <option value="Series 80">Series 80</option>
-                        <option value="Series 200">Series 200</option>
-                    </select>
+                    <label>Head type</label>    
+                    <input type="text" class="form-control" id="validationCustom01" name="design[headtype]" placeholder="Head type" required>
                     <div class="invalid-feedback">
-                            Please choose a System type!
-                    </div>   
-            </div>
-            <div class="form-group">
-                <label>Notes</label>    
-                <textarea class="form-control" name="design[notes]"></textarea>
-            </div>
-            <div class="form-group">
-                <label>Date</label>    
-                <input type="date" class="form-control" id="validationCustom01" name="design[date]" placeholder="Date" required >
-                <div class="invalid-feedback">
-                        Please choose a Date!
-                </div>
-            </div>
-            <div class="form-group">
-                <label>Engineer</label>    
-                <input type="text" class="form-control" id="validationCustom01" name="design[Engineer]" placeholder="Engineer" required>
-                <div class="invalid-feedback">
-                        Please choose an Engineer!
-                </div>
-            </div>
-            <div class="form-group">
-                <label>Head type</label>    
-                <input type="text" class="form-control" id="validationCustom01" name="design[headtype]" placeholder="Head type" required>
-                <div class="invalid-feedback">
-                        Please choose a Head type!
-                </div>
-            </div>
+                            Please choose a Head type!
+                    </div>
+                </div>  
             <div class="form-group">
                 <label>Aperture width</label>    
                 <input type="text" class="form-control" id="validationCustom01" name="design[apwidth]" placeholder="Aperture width" required>
                 <div class="invalid-feedback">
-                        Please choose an Aperture width!
+                        Please enter an Aperture width!
                 </div>
             </div>
             <div class="form-group">
                 <label>Aperture height</label>    
                 <input type="text" class="form-control" id="validationCustom01" name="design[apheight]" placeholder="Aperture height" required>
                 <div class="invalid-feedback">
-                        Please choose an Aperture height!
+                        Please enter an Aperture height!
                 </div>
-            </div>
+            </div>     
             <div class="form-group">
-                <label>Conveyor height</label>    
-                <input type="text" class="form-control" id="validationCustom01" name="design[convheight]" placeholder="Conveyor height" required>
+                <label>System type</label> 
+                    <select class="form-control" id="validationCustom01" name="design[systemtype]" required>
+                        <option value="">Choose a system type...</option>
+                        <option value="Series 80">Series 80</option>
+                        <option value="Series 200">Series 200</option>
+                    </select>
+                    <div class="invalid-feedback">
+                            Please choose a System type!
+                    </div>   
+            </div>    
+            <div class="form-group">
+                <label>Reject system</label> 
+                    <select class="form-control" id="validationCustom01" name="design[reject]" required>
+                        <option value="">Choose a reject system...</option>
+                        <option value="stop alarm">Stop Alarm</option>
+                        <option value="air blast md">Air blast MD</option>
+                        <option value="air blast hd">Air blast HD</option>
+                        <option value="punch push">Punch/Push</option>
+                        <option value="overhead sweep">Overhead sweep</option>
+                        <option value="retracting band">Retracting band</option>
+                        <option value="lift flap">Lift flap</option>
+                        <option value="drop flap">Drop flap</option>
+                        <option value="other">Other (specify on "notes" area)</option>
+                    </select>
+                    <div class="invalid-feedback">
+                            Please choose a System type!
+                    </div>   
+            </div>    
+            <div class="form-group">
+                <label>Conveyor infeed height</label>    
+                <input type="text" class="form-control" id="validationCustom01" name="design[convinheight]" placeholder="Conveyor infeed height" required>
                 <div class="invalid-feedback">
-                        Please choose a Conveyor height!
+                        Please enter a Conveyor height!
                 </div>
              </div>   
+             <div class="form-group">
+                <label>Conveyor outfeed height</label>    
+                <input type="text" class="form-control" id="validationCustom01" name="design[convoutheight]" placeholder="Conveyor outfeed height" required>
+                <div class="invalid-feedback">
+                        Please enter a Conveyor height!
+                </div>
+             </div>  
             <div class="form-group">
                 <label>Conveyor length</label>    
                 <input type="text" class="form-control" id="validationCustom01" name="design[convlength]" placeholder="Conveyor length" required>
                 <div class="invalid-feedback">
-                        Please choose a Conveyor length!
+                        Please enter a Conveyor length!
                 </div>
             </div>    
             <div class="form-group">
                 <label>Handing</label>    
-                <input type="text" class="form-control" id="validationCustom01" name="design[handing]" placeholder="Handing" required>
+                <select class="form-control" id="validationCustom01" name="design[handing]" required>
+                        <option value="">Choose a handing...</option>
+                        <option value="left hand">Left hand</option>
+                        <option value="right hand">Right hand</option>
+                </select>        
                 <div class="invalid-feedback">
                         Please choose a Handing!
                 </div>
@@ -120,38 +142,55 @@
                 <div class="invalid-feedback">
                         Please choose a Belt type!
                 </div>
-             </div>   
+             </div>
+            <div class="form-group">
+                <label>MO agent</label>
+                <input type="text" class="form-control" id="validationCustom01" name="design[moagent]" placeholder="MO agent" required>
+                <div class="invalid-feedback">
+                        Please enter a MO agent!
+                </div>
+            </div>
+            <div class="form-group">
+                <label>End user</label>    
+                <input type="text" class="form-control" id="validationCustom01" name="design[enduser]" placeholder="End user" required>
+                <div class="invalid-feedback">
+                        Please enter an End user!
+                </div>
+            </div>
             <div class="form-group">
                 <label>Product</label>    
                 <input type="text" class="form-control" id="validationCustom01" name="design[product]" placeholder="Product" required>
                 <div class="invalid-feedback">
-                        Please choose a Product!
+                        Please enter a Product!
                 </div>
             </div>    
             <div class="form-group">
                 <label>Packaging</label>    
                 <input type="text" class="form-control" id="validationCustom01" name="design[packaging]" placeholder="Packaging" required>
                 <div class="invalid-feedback">
-                        Please choose a Packaging!
-                </div>
-             </div>   
-            <div class="form-group">
-                <label>Design id</label>    
-                <input type="text" class="form-control" id="validationCustom01" name="design[designid]" placeholder="Design id" required>
-                <div class="invalid-feedback">
-                        Please choose a Design id!
-                </div>
-             </div>   
-            <div class="form-group">
-                <label>SAP number</label>    
-                <input type="text" class="form-control" id="validationCustom01" name="design[sapnum]" placeholder="SAP number" required>
-                <div class="invalid-feedback">
-                        Please choose a SAP number!
+                        Please enter a Packaging!
                 </div>
              </div>  
-              
             <div class="form-group">
-                <button>SAVE</button>
+                <label>Notes</label>    
+                <textarea class="form-control" name="design[notes]"></textarea>
+            </div>
+            <div class="form-group">
+                <label>Date</label>    
+                <input type="date" class="form-control" id="validationCustom01" name="design[date]" placeholder="Date" required >
+                <div class="invalid-feedback">
+                        Please enter a Date!
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Engineer</label>    
+                <input type="text" class="form-control" id="validationCustom01" name="design[engineer]" placeholder="Engineer" required>
+                <div class="invalid-feedback">
+                        Please enter an Engineer!
+                </div>
+            </div> 
+            <div class="form-group">
+                <button class="btn btn-outline-info btn-block ">SAVE</button>
                 
             </div>     
          </form>

@@ -5,8 +5,8 @@
          <form class="needs-validation" action="/designs/<%= design._id %>?_method=PUT" method="POST" id="form-designs" novalidate >
             <div class="form-group" >
                     <label>Region</label>
-                    <select class="form-control" id="validationCustom01" name="design[region]" placeholder="Region" value="<%= design.region %>" required>
-                        <option value="">Choose a Region...</option>
+                    <select class="form-control" id="validationCustom01" name="design[region]"  value="<%= design.region %>" required>
+                        <option value="<%= design.region %>"><%= design.region %></option>
                         <option value="uk">UK</option>
                         <option value="china">China</option>
                         <option value="usa">USA</option>
@@ -17,141 +17,182 @@
                  </div>   
                  <div class="form-group" >
                     <label>Sharepoint ID</label>
-                    <input type="number" min="0" step="1" class="form-control" id="validationCustom01" name="design[sharepointid]" placeholder="Sharepoint ID" value="<%= design.sharepointid %>" required>
+                    <input type="number" min="0" step="1" class="form-control" id="validationCustom01" name="design[sharepointid]"  value="<%= design.sharepointid %>" required>
                     <div class="invalid-feedback">
-                            Please choose a Sharepoint ID!
+                            Please enter a Sharepoint ID!
                     </div>
                  </div>
+                   <div class="form-group">
+                    <label>Design id</label>    
+                    <input type="text" class="form-control" id="validationCustom01" name="design[designid]"  value="<%= design.designid %>" required>
+                    <div class="invalid-feedback">
+                            Please enter a Design id!
+                    </div>
+                 </div>   
+                <div class="form-group">
+                    <label>SAP number</label>    
+                    <input type="text" class="form-control" id="validationCustom01" name="design[sapnum]"  value="<%= design.sapnum %>" required>
+                    <div class="invalid-feedback">
+                            Please enter a SAP number!
+                    </div>
+                 </div>  
+                 <div class="form-group" >
+                        <label>Sales order number</label>
+                        <input type="number" min="0" step="1" class="form-control" id="validationCustom01" name="design[so]"  value="<%= design.so %>" required>
+                        <div class="invalid-feedback">
+                                Please enter a Sales order number!
+                        </div>
+                     </div>
                  <div class="form-group">
                     <label>Type</label>
-                    <input type="text" class="form-control" id="validationCustom01" name="design[type]" placeholder="Type" value="<%= design.type %>" required>
+                    <select class="form-control" id="validationCustom01" name="design[type]" value="<%= design.type %>" required>
+                            <option value="<%= design.type %>"><%= design.type %></option>
+                            <option value="standard">Standard system</option>
+                            <option value="special">Special system</option>
+                        </select>
                     <div class="invalid-feedback">
                             Please choose a Type!
                     </div>
                 </div>    
                 <div class="form-group">
-                    <label>MO agent</label>
-                    <input type="text" class="form-control" id="validationCustom01" name="design[moagent]" placeholder="MO agent" value="<%= design.moagent %>" required>
-                    <div class="invalid-feedback">
-                            Please choose a MO agent!
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label>End user</label>    
-                    <input type="text" class="form-control" id="validationCustom01" name="design[enduser]" placeholder="End user" value="<%= design.enduser %>" required>
-                    <div class="invalid-feedback">
-                            Please choose a End user!
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label>System type</label> 
-                        <select class="form-control" id="validationCustom01" name="design[systemtype]"  required>
-                            <option value="<%= design.systemtype %>"><%= design.systemtype %></option>
-                            <option value="Series 80">Series 80</option>
-                            <option value="Series 200">Series 200</option>
-                        </select>
+                        <label>Head type</label>    
+                        <input type="text" class="form-control" id="validationCustom01" name="design[headtype]"  value="<%= design.headtype %>" required>
                         <div class="invalid-feedback">
-                                Please choose a System type!
-                        </div>   
-                </div>
-                <div class="form-group">
-                    <label>Notes</label>    
-                    <textarea class="form-control" name="design[notes]" value="<%= design.notes %>"></textarea>
-                </div>
-                <div class="form-group">
-                    <label>Date</label>    
-                    <input type="date" class="form-control" id="validationCustom01" name="design[date]" value="<%= design.date %>" required >
-                    <div class="invalid-feedback">
-                            Please choose a Date!
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label>Engineer</label>    
-                    <input type="text" class="form-control" id="validationCustom01" name="design[Engineer]" placeholder="Engineer" value="<%= design.engineer %>" required>
-                    <div class="invalid-feedback">
-                            Please choose an Engineer!
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label>Head type</label>    
-                    <input type="text" class="form-control" id="validationCustom01" name="design[headtype]" placeholder="Head type" value="<%= design.headtype %>" required>
-                    <div class="invalid-feedback">
-                            Please choose a Head type!
-                    </div>
+                                Please choose a Head type!
+                        </div>
                 </div>
                 <div class="form-group">
                     <label>Aperture width</label>    
-                    <input type="text" class="form-control" id="validationCustom01" name="design[apwidth]" placeholder="Aperture width" value="<%= design.apwidth%>"required>
+                    <input type="text" class="form-control" id="validationCustom01" name="design[apwidth]"  value="<%= design.apwidth%>"required>
                     <div class="invalid-feedback">
-                            Please choose an Aperture width!
+                            Please enter an Aperture width!
                     </div>
                 </div>
                 <div class="form-group">
                     <label>Aperture height</label>    
-                    <input type="text" class="form-control" id="validationCustom01" name="design[apheight]" placeholder="Aperture height" value="<%= design.apheight %>" required>
+                    <input type="text" class="form-control" id="validationCustom01" name="design[apheight]"  value="<%= design.apheight %>" required>
                     <div class="invalid-feedback">
-                            Please choose an Aperture height!
+                            Please enter an Aperture height!
                     </div>
                 </div>
                 <div class="form-group">
-                    <label>Conveyor height</label>    
-                    <input type="text" class="form-control" id="validationCustom01" name="design[convheight]" placeholder="Conveyor height" value="<%= design.convheight %>" required>
+                        <label>System type</label> 
+                            <select class="form-control" id="validationCustom01" name="design[systemtype]"  required>
+                                <option value="<%= design.systemtype %>"><%= design.systemtype %></option>
+                                <option value="Series 80">Series 80</option>
+                                <option value="Series 200">Series 200</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                    Please choose a System type!
+                            </div>   
+                </div>
+                <div class="form-group">
+                <label>Reject system</label> 
+                    <select class="form-control" id="validationCustom01" name="design[reject]" required>
+                        <option value="<%= design.reject %>"><%= design.reject %></option>
+                        <option value="stop alarm">Stop Alarm</option>
+                        <option value="air blast md">Air blast MD</option>
+                        <option value="air blast hd">Air blast HD</option>
+                        <option value="punch push">Punch/Push</option>
+                        <option value="overhead sweep">Overhead sweep</option>
+                        <option value="retracting band">Retracting band</option>
+                        <option value="lift flap">Lift flap</option>
+                        <option value="drop flap">Drop flap</option>
+                        <option value="other">Other (specify on "notes" area)</option>
+                    </select>
                     <div class="invalid-feedback">
-                            Please choose a Conveyor height!
+                            Please choose a System type!
+                    </div>   
+                 </div>   
+                <div class="form-group">
+                    <label>Conveyor infeed height</label>    
+                    <input type="text" class="form-control" id="validationCustom01" name="design[convinheight]" value="<%= design.convinheight %>" required>
+                    <div class="invalid-feedback">
+                            Please enter a Conveyor height!
+                    </div>
+                 </div>   
+                 <div class="form-group">
+                    <label>Conveyor outfeed height</label>    
+                    <input type="text" class="form-control" id="validationCustom01" name="design[convoutheight]"  value="<%= design.convoutheight %>" required>
+                    <div class="invalid-feedback">
+                            Please enter a Conveyor height!
                     </div>
                  </div>   
                 <div class="form-group">
                     <label>Conveyor length</label>    
-                    <input type="text" class="form-control" id="validationCustom01" name="design[convlength]" placeholder="Conveyor length" value="<%= design.convlength %>" required>
+                    <input type="text" class="form-control" id="validationCustom01" name="design[convlength]"  value="<%= design.convlength %>" required>
                     <div class="invalid-feedback">
-                            Please choose a Conveyor length!
+                            Please enter a Conveyor length!
                     </div>
                 </div>    
                 <div class="form-group">
                     <label>Handing</label>    
-                    <input type="text" class="form-control" id="validationCustom01" name="design[handing]" placeholder="Handing" value="<%= design.handing %>" required>
+                    <select class="form-control" id="validationCustom01" name="design[handing]" value="<%= design.handing %>" required>
+                            <option value="<%= design.handing %>"><%= design.handing %></option>
+                            <option value="left hand">Left hand</option>
+                            <option value="right hand">Right hand</option>
+                    </select>        
                     <div class="invalid-feedback">
                             Please choose a Handing!
                     </div>
                  </div>   
                 <div class="form-group">
                     <label>Belt type</label>    
-                    <input type="text" class="form-control" id="validationCustom01" name="design[belttype]" placeholder="Belt type" value="<%= design.belttype %>" required>
+                    <input type="text" class="form-control" id="validationCustom01" name="design[belttype]"  value="<%= design.belttype %>" required>
                     <div class="invalid-feedback">
                             Please choose a Belt type!
                     </div>
-                 </div>   
+                 </div>  
+                <div class="form-group">
+                    <label>MO agent</label>
+                    <input type="text" class="form-control" id="validationCustom01" name="design[moagent]"  value="<%= design.moagent %>" required>
+                    <div class="invalid-feedback">
+                            Please enter a MO agent!
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>End user</label>    
+                    <input type="text" class="form-control" id="validationCustom01" name="design[enduser]"  value="<%= design.enduser %>" required>
+                    <div class="invalid-feedback">
+                            Please choose a End user!
+                    </div>
+                </div>
                 <div class="form-group">
                     <label>Product</label>    
-                    <input type="text" class="form-control" id="validationCustom01" name="design[product]" placeholder="Product" value="<%= design.product %>" required>
+                    <input type="text" class="form-control" id="validationCustom01" name="design[product]"  value="<%= design.product %>" required>
                     <div class="invalid-feedback">
-                            Please choose a Product!
+                            Please enter a Product!
                     </div>
                 </div>    
                 <div class="form-group">
                     <label>Packaging</label>    
-                    <input type="text" class="form-control" id="validationCustom01" name="design[packaging]" placeholder="Packaging" value="<%= design.packaging %>" required>
+                    <input type="text" class="form-control" id="validationCustom01" name="design[packaging]"  value="<%= design.packaging %>" required>
                     <div class="invalid-feedback">
-                            Please choose a Packaging!
+                            Please enter a Packaging!
                     </div>
-                 </div>   
+                 </div> 
                 <div class="form-group">
-                    <label>Design id</label>    
-                    <input type="text" class="form-control" id="validationCustom01" name="design[designid]" placeholder="Design id" value="<%= design.designid %>" required>
-                    <div class="invalid-feedback">
-                            Please choose a Design id!
-                    </div>
-                 </div>   
+                    <label>Notes</label>    
+                    <textarea class="form-control" name="design[notes]" value="<%= design.notes %>"></textarea>
+                </div>
                 <div class="form-group">
-                    <label>SAP number</label>    
-                    <input type="text" class="form-control" id="validationCustom01" name="design[sapnum]" placeholder="SAP number" value="<%= design.sapnum %>" required>
+                    <label>Date</label>    
+                    <input type="date" dateformat="d M y" class="form-control" id="validationCustom01" name="design[date]" value="<%= design.date %>" required >
                     <div class="invalid-feedback">
-                            Please choose a SAP number!
+                            Please enter a Date!
                     </div>
-                 </div>  
+                </div>
+                <div class="form-group">
+                    <label>Engineer</label>    
+                    <input type="text" class="form-control" id="validationCustom01" name="design[engineer]"  value="<%= design.engineer %>" required>
+                    <div class="invalid-feedback">
+                            Please enter an Engineer!
+                    </div>
+                </div>  
+              
                   
                 <div class="form-group">
-                    <button>SAVE</button>
+                    <button class="btn btn-outline-info btn-block">SAVE</button>
                     
                 </div>      
          </form>

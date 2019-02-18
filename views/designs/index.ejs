@@ -1,7 +1,7 @@
 <% include .././partials/header %>
 
 
-    <div>
+    <!-- <div>
         <% if(noMatch !== null) { %>
         <h3><%= noMatch %></h3>
         <p>
@@ -13,34 +13,55 @@
         </form>
         </p>
         <% } %>
-    </div>
+    </div> -->
+
+<div class="card-deck p-5">
 
     <% designs.forEach(function(design){ %>
-        <div class="container d-flex justify-content-center">
-            <p><%= design.sharepointid %></p>
-            <p><%= design.type %></p>
-            <p><%= design.moagent %></p>
-            <p><%= design.enduser %></p>
-            <p><%= design.systemtype %></p>
-            <p><%= design.notes %></p>
-            <p><%= design.date %></p>
-            <p><%= design.engineer %></p>
-            <p><%= design.headtype %></p>
-            <p><%= design.apwidth %></p>
-            <p><%= design.apheight %></p>
-            <p><%= design.convheight %></p>
-            <p><%= design.convlength %></p>
-            <p><%= design.handing %></p>
-            <p><%= design.belttype %></p>
-            <p><%= design.product %></p>
-            <p><%= design.packaging %></p>
-            <p><%= design.designid %></p>
-            <p><%= design.sapnum %></p>
-            <p><%= design.author.username %></p>
-            <a href="/designs/<%= design._id %>">More info</a>
-        
-        
+
+        <div class="card bg-light" >
+            <div class="card-header">
+                ID: <%= design.sharepointid %> / SO: <%= design.so %>
+            </div>
+            <div class="card-body">
+                
+                <h6 class="mb-2 text-muted">Head type: <%= design.headtype %> <%= design.apwidth %> X <%= design.apheight %></h6>
+                <p></p>
+                <h6 class="mb-2 text-muted">Conveyor type: <%= design.type %> <%= design.systemtype %> <%= design.reject %> <%= design.belttype %> </h6>
+               
+               
+                
+                <!-- <p><%= design.region %></p>
+                <p><%= design.sharepointid %></p>
+               
+                <p></p>
+                <p><%= design.moagent %></p>
+                <p><%= design.enduser %></p>
+                <p></p>
+                <p><%= design.notes %></p>
+                
+                
+                <p></p>
+                <p></p>
+                <p></p>
+                <p><%= design.convheight %></p>
+                <p></p>
+                <p><%= design.handing %></p>
+                <p></p>
+                <p><%= design.product %></p>
+                <p><%= design.packaging %></p>
+                <p></p>
+                <p><%= design.sapnum %></p>
+                <p><%= design.author.username %></p> -->
+                
+            </div>
+            <div class="card-footer">
+                <small class="text-muted">
+                    Designed by <%= design.engineer %> on <%= design.date.toDateString() %> <a href="/designs/<%= design._id %>" class="card-link">Click here for more info</a>
+                </small>
+            </div>
         </div>
     <% }) %>
 </div>
+
 <% include .././partials/footer %>
