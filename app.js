@@ -31,7 +31,7 @@ app.use(methodOverride("_method"));
 app.use(expressSanitizer());
 app.use(flash());
 ////SEED DATABASE
-//seedDB();
+// seedDB();
 //PASSPORT CONFIG
 app.use(require("express-session")({
     secret: "pagina secreta",

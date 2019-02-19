@@ -11,3 +11,20 @@
 .form-group {
     padding-top: 5;
 }
+
+#card-index {
+    max-width: 28rem;
+    min-width: 28rem;
+    
+}
+
+#index-container {
+    padding-left: 53;
+    padding-top: 20;
+}
+
+#card-header {
+    font-weight: bold;
+    color:dimgrey ;
+    
+}

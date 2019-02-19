@@ -1,39 +1,58 @@
 <% include .././partials/header %>
-    <div class="ui main text container segment">
-         <div class="ui huge header">Design details</div>
-        <div class="top attached segment">
-        <p><%= design.sharepointid %></p>
-        <p><%= design.type %></p>
-        <p><%= design.moagent %></p>
-        <p><%= design.enduser %></p>
-        <p><%= design.systemtype %></p>
-        <p><%= design.notes %></p>
-        <%= design.date %>
-        <p><%= design.engineer %></p>
-        <p><%= design.headtype %></p>
-        <p><%= design.apwidth %></p>
-        <p><%= design.apheight %></p>
-        <p><%= design.convheight %></p>
-        <p><%= design.convlength %></p>
-        <p><%= design.handing %></p>
-        <p><%= design.belttype %></p>
-        <p><%= design.product %></p>
-        <p><%= design.packaging %></p>
-        <p><%= design.designid %></p>
-        <p><%= design.sapnum %></p>
+<div class="container p-5">
+    <div class="card text-center">
+        <div class="card-header">
+            <h1>Design details</h1>
         </div>
-        <% if(!currentUser){%>
-        
-        <% } else { %>
-        <a class="ui orange basic button" href="/designs/<%= design.id %>/edit">EDIT</a>
-        <form class="ui form" action="/designs/<%= design._id %>?_method=DELETE" method="POST">
-        <button class="ui red medium basic button">DELETE</button>
-        <% } %>
-        </form>
-        <% design.comments.forEach(function(comment){ %>
-            <p><%= comment.author %> -- <%= comment.text %></p>
-        <% }) %>
-    
+        <div class="card-body">
+            <p><strong>Region:</strong>  <%= design.region %></p>
+            <p><strong>Sharepoint ID:</strong>  <%= design.sharepointid %></p>
+            <p><strong>Sales order number:</strong>  <%= design.so %></p>
+            <p><strong>Design id:</strong>  <%= design.designid %></p>
+            <p><strong>SAP number:</strong>  <%= design.sapnum %></p>
+            <p><strong>Type:</strong>  <%= design.type %></p>
+            <p><strong>Head type:</strong>  <%= design.headtype %></p>
+            <p><strong>Aperture width:</strong>  <%= design.apwidth %></p>
+            <p><strong>Aperture height:</strong>  <%= design.apheight %></p>
+            <p><strong>Sistem type:</strong>  <%= design.systemtype %></p>
+            <p><strong>Reject:</strong>  <%= design.reject %></p>
+            <p><strong>Conveyor infeed height:</strong>  <%= design.convinheight %></p>
+            <p><strong>Conveyor outfeed height:</strong>  <%= design.convoutheight %></p>
+            <p><strong>Conveyor length:</strong>  <%= design.convlength %></p>
+            <p><strong>Handing:</strong>  <%= design.handing %></p>
+            <p><strong>Belt type:</strong>  <%= design.belttype %></p>
+            <p><strong>Product:</strong>  <%= design.product %></p>
+            <p><strong>Packaging:</strong>  <%= design.packaging %></p>
+            <p><strong>MO Agent:</strong>  <%= design.moagent %></p>
+            <p><strong>End user:</strong>  <%= design.enduser %></p>           
+            <p><strong>Notes:</strong>  <%= design.notes %></p>
+            <p><strong>Date:</strong> <%= design.date.toDateString() %> </p>
+            <p><strong>Engineer:</strong>  <%= design.engineer %></p>
+        </div>
+        <div class="card-footer">
+            
+                <% if(!currentUser){%>
+                    <% } else { %>
+                <div class="row">   
+                    <div class="col">
+                        <a class="btn btn-outline-warning btn-block" href="/designs/<%= design.id %>/edit">EDIT</a>
+                    </div>     
+                    <div class="col">
+                        <form  action="/designs/<%= design._id %>?_method=DELETE" method="POST">
+                        <button class="btn btn-outline-danger btn-block">DELETE</button>
+                        <% } %>
+                        </form>
+                    </div>
+                    
+                    <!-- <% design.comments.forEach(function(comment){ %>
+                    <p><%= comment.author %> -- <%= comment.text %></p>
+                    <% }) %> -->
+            </div>
+                
+        </div>
     </div>
+</div>
+
+
     
     <% include .././partials/footer %>

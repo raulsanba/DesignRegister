@@ -1,11 +1,10 @@
 <% include .././partials/header %>
 
-
-    <!-- <div>
+<!-- <div>
         <% if(noMatch !== null) { %>
         <h3><%= noMatch %></h3>
         <p>
-        <form action="/designs" method="GET" class="form-inline">
+        <form action="/designs" method="GET">
             <div class="form-group">
                 <input type="text" name="search" placeholder="design search..." >
                 <input type="submit" value="Search">
@@ -14,54 +13,42 @@
         </p>
         <% } %>
     </div> -->
+    
 
-<div class="card-deck p-5">
-
-    <% designs.forEach(function(design){ %>
-
-        <div class="card bg-light" >
-            <div class="card-header">
-                ID: <%= design.sharepointid %> / SO: <%= design.so %>
-            </div>
-            <div class="card-body">
+<div class="container-fluid" id="index-container">
+      
+    <div class="row">
+            <% designs.forEach(function(design){ %>
+        <div class="col-xl-3 col-lg-6 p-4">
+                <div class="card bg-light " id="card-index" >
+                    <div class="card-header" id="card-header">
+                     ID: <%= design.sharepointid %> / SO: <%= design.so %>
+                    </div>
+                    <div class="card-body text-center" id="card-body">
+                    <h6 class="mb-2 text-muted">Head type: </h6>
+                    <p>
+                        <%= design.headtype %> <%= design.apwidth %> X <%= design.apheight %>
+                    </p>
+                    <h6 class="mb-2 text-muted">Conveyor type:  </h6>
+                    <p>
+                        <%= design.type %> <%= design.systemtype %> <%= design.reject %> <%= design.belttype %>
+                    </p>
+                    </div>       
+                    <div class="card-footer" id="card-footer">
+                        <small class="text-muted">
+                            Designed by <%= design.engineer %> on <%= design.date.toDateString() %>
+                        </small>
+                        <p></p> 
+                        <div class="text-center"> 
+                        <a href="/designs/<%= design._id %>" class="btn btn-outline-primary btn-sm " >Click here for more info</a>
+                        </div>
+                    </div>
+                </div>
                 
-                <h6 class="mb-2 text-muted">Head type: <%= design.headtype %> <%= design.apwidth %> X <%= design.apheight %></h6>
-                <p></p>
-                <h6 class="mb-2 text-muted">Conveyor type: <%= design.type %> <%= design.systemtype %> <%= design.reject %> <%= design.belttype %> </h6>
-               
-               
-                
-                <!-- <p><%= design.region %></p>
-                <p><%= design.sharepointid %></p>
-               
-                <p></p>
-                <p><%= design.moagent %></p>
-                <p><%= design.enduser %></p>
-                <p></p>
-                <p><%= design.notes %></p>
-                
-                
-                <p></p>
-                <p></p>
-                <p></p>
-                <p><%= design.convheight %></p>
-                <p></p>
-                <p><%= design.handing %></p>
-                <p></p>
-                <p><%= design.product %></p>
-                <p><%= design.packaging %></p>
-                <p></p>
-                <p><%= design.sapnum %></p>
-                <p><%= design.author.username %></p> -->
-                
-            </div>
-            <div class="card-footer">
-                <small class="text-muted">
-                    Designed by <%= design.engineer %> on <%= design.date.toDateString() %> <a href="/designs/<%= design._id %>" class="card-link">Click here for more info</a>
-                </small>
-            </div>
-        </div>
-    <% }) %>
-</div>
+        </div>    
+        <% }) %>
+    </div>
+   
+</div>    
 
 <% include .././partials/footer %>
