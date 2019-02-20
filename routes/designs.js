@@ -10,12 +10,12 @@ router.get("/designs", function(req, res){
     if(req.query.search) {
         const regex = new RegExp(escapeRegex(req.query.search), 'gi');
         
-        Design.find({"sharepointid": regex}, function(err, founddesigns){
+        Design.find({"region": regex }, function(err, founddesigns){
            if(err){
                console.log(err);
            } else {
               if(founddesigns.length < 1) {
-                  noMatch = "No designs match that query, please try again.";
+                  noMatch = "There were no results found, please try again...";
               }
               res.render("designs/index",{designs:founddesigns, currentUser: req.user, noMatch: noMatch});
            }
