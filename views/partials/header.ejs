@@ -30,10 +30,80 @@
                                                 <i class="fas fa-search" ></i>   <strong >SEARCH</strong> 
                                           </a>
                                           <div class="collapse" id="collapseExample">
-                                                <div class="jumbotron">  
-                                                      <form action="/designs" method="GET">
-                                                            <div>
-                                                                  <input type="text" name="search" placeholder="design search..." >
+                                                <div >  
+                                                      <form class="form-inline" action="/designs" method="GET">
+                                                            <div id="search-field">
+                                                                  <label>Region</label>
+                                                                  <select class="form-control" name="region" placeholder="Region" >
+                                                                        <option value="">Search a Region...</option>
+                                                                        <option value="UK">UK</option>
+                                                                        <option value="China">China</option>
+                                                                        <option value="Usa">USA</option>
+                                                                    </select>  
+                                                            </div>
+                                                            <div class="form-group">
+                                                                  <div>
+                                                                        <label>Sharepoint ID</label>
+                                                                        <input type="number" class="form-control" name="sharepointid" placeholder="Sharepoint id">
+                                                                  </div> 
+                                                            </div>     
+                                                            <div class="form-group">
+                                                                  <div>
+                                                                        <label>Design id</label>    
+                                                                        <input type="text" class="form-control" name="designid" placeholder="Design id"> 
+                                                                  </div>
+                                                            </div>       
+                                                            <div class="form-group">
+                                                                  <div>
+                                                                        <label>SAP number</label>    
+                                                                        <input type="text" class="form-control" name="sapnum" placeholder="SAP number">  
+                                                                  </div>   
+                                                            </div>
+                                                            <div class="form-group" >
+                                                                  <div>
+                                                                        <label>Sales order number</label>
+                                                                        <input type="number" class="form-control" name="so" placeholder="SO number">  
+                                                                  </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                  <div>
+                                                                        <label>Type</label>
+                                                                        <select class="form-control"  name="type">
+                                                                                <option value="">Choose a type...</option>
+                                                                                <option value="Standard">Standard system</option>
+                                                                                <option value="Special">Special system</option>
+                                                                        </select>
+                                                                  </div>          
+                                                            </div>                                                  
+
+                                                           
+                                                            
+                                                                  
+                                                                 
+
+                                                                  <!-- <input type="text" name="type" placeholder="design search..." >
+                                                                  <input type="text" name="moagent" placeholder="design search..." >
+                                                                  <input type="text" name="enduser" placeholder="design search..." >
+                                                                  <input type="text" name="systemtype" placeholder="design search..." >
+                                                                  <input type="text" name="notes" placeholder="design search..." >
+                                                                  <input type="text" name="date" placeholder="design search..." >
+                                                                  <input type="text" name="engineer" placeholder="design search..." >
+                                                                  <input type="text" name="headtype" placeholder="design search..." >
+                                                                  <input type="text" name="apwidth" placeholder="design search..." >
+                                                                  <input type="text" name="apheight" placeholder="design search..." >
+                                                                  <input type="text" name="convinheight" placeholder="design search..." >
+                                                                  <input type="text" name="convoutheight" placeholder="design search..." >
+                                                                  <input type="text" name="convlength" placeholder="design search..." >
+                                                                  <input type="text" name="handing" placeholder="design search..." >
+                                                                  <input type="text" name="belttype" placeholder="design search..." >
+                                                                  <input type="text" name="product" placeholder="design search..." >
+                                                                  <input type="text" name="packaging" placeholder="design search..." >
+                                                                  <input type="text" name="designid" placeholder="design search..." >
+                                                                  <input type="text" name="sapnum" placeholder="design search..." >
+                                                                  <input type="text" name="so" placeholder="design search..." >
+                                                                  <input type="text" name="reject" placeholder="design search..." > -->
+                                                                  
+                                                                  
                                                                   <input type="submit" value="Search">
                                                             </div>
                                                       </form> 

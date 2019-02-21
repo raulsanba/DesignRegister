@@ -7,10 +7,14 @@ var User = require(".././models/user");
 //INDEX ROUTES
 router.get("/designs", function(req, res){
     var noMatch = null;
-    if(req.query.search) {
-        const regex = new RegExp(escapeRegex(req.query.search), 'gi');
-        
-        Design.find({"region": regex }, function(err, founddesigns){
+    
+     
+
+    if(req.query.region || req.query.sharepointid) {
+        const regex = new RegExp(escapeRegex(req.query.region), 'gi');
+        const regex2 = new RegExp(escapeRegex(req.query.sharepointid), 'gi');
+     
+        Design.find({$and:[{"region": regex }, {"sharepointid": regex2 }]}, function(err, founddesigns){
            if(err){
                console.log(err);
            } else {
@@ -20,7 +24,9 @@ router.get("/designs", function(req, res){
               res.render("designs/index",{designs:founddesigns, currentUser: req.user, noMatch: noMatch});
            }
         });
+        
     } else {
+    
 
     Design.find({}, function(err, designs){
         if (err){
@@ -30,6 +36,8 @@ router.get("/designs", function(req, res){
         }
     });
 }
+
+
 });
 // NEW ROUTE
 router.get("/designs/new", isLoggedIn, function(req, res) {
