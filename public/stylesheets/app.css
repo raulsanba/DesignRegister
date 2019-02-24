@@ -32,3 +32,11 @@
 #search-field {
     padding: 10px;
 }
+
+#label-search {
+    color: azure;
+}
+
+#form-search-input {
+    padding: 40px;
+}

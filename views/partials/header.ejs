@@ -29,88 +29,207 @@
                                           <a class="btn btn-warning" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample" >
                                                 <i class="fas fa-search" ></i>   <strong >SEARCH</strong> 
                                           </a>
+                                          
+                                               
                                           <div class="collapse" id="collapseExample">
-                                                <div >  
+                                                  
                                                       <form class="form-inline" action="/designs" method="GET">
-                                                            <div id="search-field">
-                                                                  <label>Region</label>
-                                                                  <select class="form-control" name="region" placeholder="Region" >
-                                                                        <option value="">Search a Region...</option>
-                                                                        <option value="UK">UK</option>
-                                                                        <option value="China">China</option>
-                                                                        <option value="Usa">USA</option>
-                                                                    </select>  
+                                                      <div class="row">
+                                                          
+                                                            <div class="form-group">
+                                                                  <div id="form-search-input">
+                                                                        <label id="label-search">Region</label>
+                                                                        <select class="form-control" name="region" >
+                                                                              <option value="">Region</option>
+                                                                              <option value="UK">UK</option>
+                                                                              <option value="China">China</option>
+                                                                              <option value="Usa">USA</option>
+                                                                        </select> 
+                                                                  </div>       
                                                             </div>
                                                             <div class="form-group">
-                                                                  <div>
-                                                                        <label>Sharepoint ID</label>
+                                                                  <div id="form-search-input">
+                                                                        <label id="label-search">Sharepoint ID</label>
                                                                         <input type="number" class="form-control" name="sharepointid" placeholder="Sharepoint id">
                                                                   </div> 
                                                             </div>     
                                                             <div class="form-group">
-                                                                  <div>
-                                                                        <label>Design id</label>    
+                                                                  <div id="form-search-input">
+                                                                        <label id="label-search">Design id</label>    
                                                                         <input type="text" class="form-control" name="designid" placeholder="Design id"> 
                                                                   </div>
                                                             </div>       
                                                             <div class="form-group">
-                                                                  <div>
-                                                                        <label>SAP number</label>    
+                                                                  <div id="form-search-input">
+                                                                        <label id="label-search">SAP number</label>    
                                                                         <input type="text" class="form-control" name="sapnum" placeholder="SAP number">  
                                                                   </div>   
                                                             </div>
+                                                      
                                                             <div class="form-group" >
-                                                                  <div>
-                                                                        <label>Sales order number</label>
+                                                                  <div id="form-search-input">
+                                                                        <label id="label-search">Sales order number</label>
                                                                         <input type="number" class="form-control" name="so" placeholder="SO number">  
                                                                   </div>
                                                             </div>
                                                             <div class="form-group">
-                                                                  <div>
-                                                                        <label>Type</label>
+                                                                  <div id="form-search-input">
+                                                                        <label id="label-search">Type</label>
                                                                         <select class="form-control"  name="type">
                                                                                 <option value="">Choose a type...</option>
                                                                                 <option value="Standard">Standard system</option>
                                                                                 <option value="Special">Special system</option>
                                                                         </select>
                                                                   </div>          
-                                                            </div>                                                  
-
-                                                           
-                                                            
-                                                                  
-                                                                 
-
-                                                                  <!-- <input type="text" name="type" placeholder="design search..." >
-                                                                  <input type="text" name="moagent" placeholder="design search..." >
-                                                                  <input type="text" name="enduser" placeholder="design search..." >
-                                                                  <input type="text" name="systemtype" placeholder="design search..." >
-                                                                  <input type="text" name="notes" placeholder="design search..." >
-                                                                  <input type="text" name="date" placeholder="design search..." >
-                                                                  <input type="text" name="engineer" placeholder="design search..." >
-                                                                  <input type="text" name="headtype" placeholder="design search..." >
-                                                                  <input type="text" name="apwidth" placeholder="design search..." >
-                                                                  <input type="text" name="apheight" placeholder="design search..." >
-                                                                  <input type="text" name="convinheight" placeholder="design search..." >
-                                                                  <input type="text" name="convoutheight" placeholder="design search..." >
-                                                                  <input type="text" name="convlength" placeholder="design search..." >
-                                                                  <input type="text" name="handing" placeholder="design search..." >
-                                                                  <input type="text" name="belttype" placeholder="design search..." >
-                                                                  <input type="text" name="product" placeholder="design search..." >
-                                                                  <input type="text" name="packaging" placeholder="design search..." >
-                                                                  <input type="text" name="designid" placeholder="design search..." >
-                                                                  <input type="text" name="sapnum" placeholder="design search..." >
-                                                                  <input type="text" name="so" placeholder="design search..." >
-                                                                  <input type="text" name="reject" placeholder="design search..." > -->
-                                                                  
-                                                                  
-                                                                  <input type="submit" value="Search">
                                                             </div>
+                                                      </div>
+                                                      
+                                                      <div class="row">
+                                                            
+                                                            <div class="form-group">
+                                                                  <div id="form-search-input">
+                                                                        <label id="label-search">Head type</label>    
+                                                                        <input type="text" class="form-control" name="headtype" placeholder="Head type"> 
+                                                                  </div>        
+                                                            </div>  
+                                                            <div class="form-group">
+                                                                        <div id="form-search-input">
+                                                                              <label id="label-search">Aperture width</label>    
+                                                                              <input type="number" class="form-control" name="apwidth" placeholder="Aperture width">
+                                                                        </div> 
+                                                            </div>
+                                                            <div class="form-group">
+                                                                        <div id="form-search-input">
+                                                                              <label id="label-search">Aperture height</label>    
+                                                                              <input type="number" class="form-control" name="apheight" placeholder="Aperture height">
+                                                                        </div> 
+                                                            </div> 
+                                                            <div class="form-group">
+                                                                        <div id="form-search-input">
+                                                                              <label id="label-search">System type</label> 
+                                                                              <select class="form-control" name="systemtype">
+                                                                                    <option value="">Choose a system type...</option>
+                                                                                    <option value="Series 80">Series 80</option>
+                                                                                    <option value="Series 200">Series 200</option>
+                                                                              </select>
+                                                                        </div>      
+                                                            </div>
+                                                            <div class="form-group">
+                                                                  <div id="form-search-input">
+                                                                        <label id="label-search">Reject system</label> 
+                                                                            <select class="form-control" name="reject">
+                                                                                <option value="">Choose a reject system...</option>
+                                                                                <option value="Stop alarm">Stop Alarm</option>
+                                                                                <option value="Air blast md">Air blast MD</option>
+                                                                                <option value="Air blast hd">Air blast HD</option>
+                                                                                <option value="Punch push">Punch/Push</option>
+                                                                                <option value="Overhead sweep">Overhead sweep</option>
+                                                                                <option value="Retracting band">Retracting band</option>
+                                                                                <option value="Lift flap">Lift flap</option>
+                                                                                <option value="Drop flap">Drop flap</option>
+                                                                                <option value="Special reject">Other (specify on "notes" area)</option>
+                                                                            </select>
+                                                                  </div>          
+                                                            </div>          
+                                                            <div class="form-group">
+                                                                  <div id="form-search-input">
+                                                                        <label id="label-search">Conveyor infeed height</label>    
+                                                                        <input type="number" class="form-control" name="convinheight" placeholder="Conveyor infeed height"> 
+                                                                  </div>
+                                                            </div>  
+                                                      </div>
+                                                      
+                                                      <div class="row">
+                                                            
+                                                            <div class="form-group">
+                                                                        <div id="form-search-input">
+                                                                              <label id="label-search">Conveyor outfeed height</label>    
+                                                                              <input type="number" class="form-control" name="convoutheight" placeholder="Conveyor outfeed height"> 
+                                                                        </div>
+                                                            </div> 
+                                                            <div class="form-group">
+                                                                        <div id="form-search-input">
+                                                                              <label id="label-search">Conveyor length</label>    
+                                                                              <input type="number" class="form-control" name="convlength" placeholder="Conveyor length"> 
+                                                                        </div>
+                                                            </div>   
+                                                            <div class="form-group">
+                                                                  <div id="form-search-input">
+                                                                        <label id="label-search">Handing</label>    
+                                                                        <select class="form-control" name="handing">
+                                                                                <option value="">Choose a handing...</option>
+                                                                                <option value="left hand">Left hand</option>
+                                                                                <option value="right hand">Right hand</option>
+                                                                        </select> 
+                                                                  </div>      
+                                                            </div> 
+                                                      </div>
+                                                      
+                                                      <div class="row">
+                                                            <div class="form-group">
+                                                                        <div id="form-search-input">
+                                                                              <label id="label-search">Belt type</label>    
+                                                                              <input type="text" class="form-control" name="belttype" placeholder="Belt type"> 
+                                                                        </div>
+                                                            </div>                       
+                                                            <div class="form-group">
+                                                                  <div id="form-search-input">
+                                                                        <label id="label-search">MO agent</label>
+                                                                        <input type="text" class="form-control" name="moagent" placeholder="MO agent">
+                                                                  </div>
+                                                            </div> 
+                                                            <div class="form-group">
+                                                                        <div id="form-search-input">
+                                                                              <label id="label-search">End User</label>
+                                                                              <input type="text" class="form-control" name="enduser" placeholder="End user">
+                                                                        </div>
+                                                            </div>  
+                                                            <div class="form-group">
+                                                                        <div id="form-search-input">
+                                                                              <label id="label-search">Product</label>
+                                                                              <input type="text" class="form-control" name="product" placeholder="Product">
+                                                                        </div>
+                                                            </div>    
+                                                            <div class="form-group">
+                                                                        <div id="form-search-input">
+                                                                              <label id="label-search">Packaging</label>
+                                                                              <input type="text" class="form-control" name="packaging" placeholder="Packaging">
+                                                                        </div>
+                                                            </div>
+                                                      </div>
+                                                      
+                                                      <div class="row">
+                                                            <div class="form-group">
+                                                                        <div id="form-search-input">
+                                                                              <label id="label-search">Notes</label>
+                                                                              <input type="text" class="form-control" name="notes" placeholder="Notes">
+                                                                        </div>
+                                                            </div>
+                                                            <!-- <div class="form-group">
+                                                                        <div id="form-search-input">
+                                                                              <label id="label-search">Date</label>
+                                                                              <input type="text" class="form-control" name="date" placeholder="Date">
+                                                                        </div> 
+                                                            </div> -->
+                                                            <div class="form-group">
+                                                                        <div id="form-search-input">
+                                                                              <label id="label-search">Engineer</label>
+                                                                              <input type="text" class="form-control" name="engineer" placeholder="Engineer">
+                                                                        </div>
+                                                            </div>
+                                                                  <div id="form-search-input">
+                                                                              <label id="label-search">Click to search</label>
+                                                                              <input type="submit"  class="btn btn-outline-warning btn-lg" value="Search">
+                                                                  </div> 
+                                                      </div>      
                                                       </form> 
+                                                      </div>
                                                       
                                                       
-                                                </div>              
-                                          </div>
+                                                </div> 
+                                          </div> 
+                                                           
+                                          
                                     </li> 
                               <% } else { %>
                               <li class="nav-item">

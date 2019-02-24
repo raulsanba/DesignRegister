@@ -10,12 +10,37 @@ router.get("/designs", function(req, res){
     
      
 
-    if(req.query.region || req.query.sharepointid) {
+    
+        if(req.query.region || req.query.sharepointid || req.query.designid || req.query.so || req.query.type || req.query.headtype || req.query.apwidth || req.query.apheight || req.query.systemtype || req.query.reject || req.query.convinheight || req.query.convoutheight || req.query.convlength || req.query.handing || req.query.belttype || req.query.moagent || req.query.enduser || req.query.product || req.query.packaging || req.query.notes  || req.query.engineer) {
         const regex = new RegExp(escapeRegex(req.query.region), 'gi');
         const regex2 = new RegExp(escapeRegex(req.query.sharepointid), 'gi');
+        const regex3 = new RegExp(escapeRegex(req.query.designid), 'gi');
+        const regex4 = new RegExp(escapeRegex(req.query.so), 'gi');
+        const regex5 = new RegExp(escapeRegex(req.query.type), 'gi');
+        const regex6 = new RegExp(escapeRegex(req.query.headtype), 'gi');
+        const regex7 = new RegExp(escapeRegex(req.query.apwidth), 'gi');
+        const regex8 = new RegExp(escapeRegex(req.query.apheight), 'gi');
+        const regex9 = new RegExp(escapeRegex(req.query.systemtype), 'gi');
+        const regex10 = new RegExp(escapeRegex(req.query.reject), 'gi');
+        const regex11 = new RegExp(escapeRegex(req.query.convinheight), 'gi');
+        const regex12 = new RegExp(escapeRegex(req.query.convoutheight), 'gi');
+        const regex13 = new RegExp(escapeRegex(req.query.convlength), 'gi');
+        const regex14 = new RegExp(escapeRegex(req.query.handing), 'gi');
+        const regex15 = new RegExp(escapeRegex(req.query.belttype), 'gi');
+        const regex16 = new RegExp(escapeRegex(req.query.moagent), 'gi');
+        const regex17 = new RegExp(escapeRegex(req.query.enduser), 'gi');
+        const regex18 = new RegExp(escapeRegex(req.query.product), 'gi');
+        const regex19 = new RegExp(escapeRegex(req.query.packaging), 'gi');
+        const regex20 = new RegExp(escapeRegex(req.query.notes), 'gi');
+        // const regex21 = new RegExp(escapeRegex(req.query.date), 'gi');
+        const regex22 = new RegExp(escapeRegex(req.query.engineer), 'gi');
+      
+
+
      
-        Design.find({$and:[{"region": regex }, {"sharepointid": regex2 }]}, function(err, founddesigns){
-           if(err){
+       
+        Design.find({$and:[{"region": regex }, {"sharepointid": regex2 }, {"designid": regex3 }, {"so": regex4 }, {"type": regex5 }, {"headtype": regex6 }, {"apwidth": regex7 }, {"apheight": regex8 }, {"systemtype": regex9 }, {"reject": regex10 }, {"convinheight": regex11 }, {"convoutheight": regex12 }, {"convlength": regex13 }, {"handing": regex14 }, {"belttype": regex15 }, {"moagent": regex16 }, {"enduser": regex17 }, {"product": regex18 }, {"packaging": regex19 }, {"notes": regex20 }, {"engineer": regex22 }]} , function(err, founddesigns){   
+        if(err){
                console.log(err);
            } else {
               if(founddesigns.length < 1) {
