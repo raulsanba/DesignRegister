@@ -1,6 +1,10 @@
 <% include ././partials/header %>
 
-
+<% if( messages.loginerror) { %>
+    <div class="alert alert-danger" role="alert">
+        <%= messages.loginerror %>        
+    </div>    
+<% } %>  
 <div class="container d-flex p-10 justify-content-center">
     <div class="jumbotron">
         <h1>Log In</h1>

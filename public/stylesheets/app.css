@@ -34,9 +34,10 @@
 }
 
 #label-search {
-    color: azure;
+    color: darkgrey;
+    padding-bottom: 3px;
 }
 
 #form-search-input {
-    padding: 40px;
+    padding: 10px;
 }

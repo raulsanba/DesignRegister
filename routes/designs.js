@@ -4,6 +4,8 @@ var Design = require(".././models/design");
 var User = require(".././models/user");
 
 
+
+
 //INDEX ROUTES
 router.get("/designs", function(req, res){
     var noMatch = null;
@@ -157,6 +159,7 @@ router.delete("/designs/:id", function(req, res){
     if(req.isAuthenticated()){
         return next();
     }
+    
     res.redirect("/login");
  }
  
