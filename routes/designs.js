@@ -2,6 +2,8 @@ var express = require("express");
 var router = express.Router();
 var Design = require(".././models/design");
 var User = require(".././models/user");
+var multer = require("multer");
+var upload = multer ({ dest: "public/uploads/"});
 
 
 
@@ -78,7 +80,7 @@ router.get("/designs/new", isLoggedIn, function(req, res) {
      
 });
 //CREATE ROUTE
-router.post("/designs",   function(req, res){
+router.post("/designs", upload.any(),   function(req, res){
 
     Design.create(req.body.design, function(err,newDesign){
         if (err){
