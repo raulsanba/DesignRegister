@@ -5,6 +5,12 @@
 </div>    
 <% } %>   
 
+<% if(messages.image) { %>
+    <div class="alert alert-info" role="alert">
+        <%= messages.image %>        
+    </div>    
+    <% } %> 
+
 
 <% if(noMatch !== null) { %>  
     <div class="alert alert-danger text-center" role="alert"> 
@@ -37,6 +43,7 @@
                         <p></p> 
                         <div class="text-center"> 
                         <a href="/designs/<%= design._id %>" class="btn btn-outline-primary btn-sm " >Click here for more info</a>
+                        <a href="/uploads" class="btn btn-outline-success btn-sm" >Add files</a>
                         </div>
                     </div>
                 </div>

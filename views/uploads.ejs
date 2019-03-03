@@ -1,0 +1,18 @@
+<% include ././partials/header %>
+
+
+<div class="container d-flex p-10 justify-content-center" id="container-uploads">
+        <div class="card bg-light">
+            <div class="card-header text-center">
+                <h2>Add a file</h2>
+            </div>
+        <div>
+        <div class="card-body">    
+            <form action="/uploads" method="POST" enctype="multipart/form-data">
+                <input class="btn btn-outline-primary" type="file" name="filename">
+                <input class="btn btn-primary" type="submit" value="Upload">
+            </form>
+        </div>    
+
+        </div>
+</div>            

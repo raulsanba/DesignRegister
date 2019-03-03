@@ -23,27 +23,6 @@ var data = [
    packaging: "Data1.14",
    designid: "Data1.15",
    sapnum: "Data1.16"
-    },
-    {
-    sharepointid: "2000",
-   type: "Data2",
-   moagent: "Data2.1",
-   enduser: "Data2.2",
-   systemtype: "Data2.3",
-   notes: "Data2.4",
-   date: "02/01/2019",
-   engineer: "Data2.5",
-   headtype: "Data2.6",
-   apwidth: "Data2.7",
-   apheight: "Data2.8",
-   convheight: "Data2.9",
-   convlength: "Data2.20",
-   handing: "Data2.21",
-   belttype: "Data2.22",
-   product: "Data2.23",
-   packaging: "Data2.24",
-   designid: "Data2.25",
-   sapnum: "Data2.26"
     }
     ];
     

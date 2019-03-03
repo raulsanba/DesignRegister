@@ -2,12 +2,23 @@ var express = require("express");
 var router = express.Router();
 var Design = require(".././models/design");
 var User = require(".././models/user");
-var multer = require("multer");
-var upload = multer ({ dest: "public/uploads/"});
+var multer = require('multer');
+// var upload = multer ({ dest: 'uploads/'});
 
+//UPLOAD IMAGES
+router.use(multer({
+    dest: 'uploads/'
+}).single('filename'));
 
+router.get("/uploads", function(req, res){
+    res.render("uploads");
+});
 
-
+router.post("/uploads", function(req, res){
+    req.flash("image", "Image uploaded");
+    res.redirect("/designs");
+});
+////////////////
 //INDEX ROUTES
 router.get("/designs", function(req, res){
     var noMatch = null;
@@ -80,7 +91,7 @@ router.get("/designs/new", isLoggedIn, function(req, res) {
      
 });
 //CREATE ROUTE
-router.post("/designs", upload.any(),   function(req, res){
+router.post("/designs", function(req, res){
 
     Design.create(req.body.design, function(err,newDesign){
         if (err){
@@ -93,6 +104,8 @@ router.post("/designs", upload.any(),   function(req, res){
         }
     });
 });
+
+
 //SHOW ROUTE
 router.get("/designs/:id", function(req, res) {
     // Design.findById(req.params.id, function(err, foundDesign){///sin comentarios
