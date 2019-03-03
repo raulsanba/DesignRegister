@@ -1,7 +1,8 @@
 var mongoose = require("mongoose");
 //MONGOOSE/MODEL CONFIG
 var designSchema = new mongoose.Schema({
-   sharepointid: Integer,
+   region: String,
+   sharepointid: String,
    type: String,
    moagent: String,
    enduser: String,
@@ -12,7 +13,8 @@ var designSchema = new mongoose.Schema({
    headtype: String,
    apwidth: String,
    apheight: String,
-   convheight: String,
+   convinheight: String,
+   convoutheight: String,
    convlength: String,
    handing: String,
    belttype: String,
@@ -20,6 +22,10 @@ var designSchema = new mongoose.Schema({
    packaging: String,
    designid: String,
    sapnum: String,
+   so:String,
+   reject: String,
+   
+
    author:[
             {
              id: {
@@ -37,4 +43,3 @@ var designSchema = new mongoose.Schema({
       ]
 });
 module.exports = mongoose.model("Design", designSchema);
- 
