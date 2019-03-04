@@ -9,30 +9,30 @@
       </head>
    
     <body>
-            
-          <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    
+          <nav class="navbar navbar-expand-lg navbar-light" id="main-navbar">
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav mr-auto">
                               <li class="navbar-brand"> 
-                                   <img src="https://www.opxleadershipnetwork.org/sites/default/files/sponsor_logos/mt_log_0.jpg" width="180" height="20" class="border-2">
-                                   <strong id="logo-text">DESIGN REGISTER</strong>
+                                    <strong id="logo-text">METTLER TOLEDO</strong> <strong id="logo-text2">Design register</strong>
+                                   <!-- <strong id="logo-text">DESIGN REGISTER</strong> -->
                               </li> 
                               <!-- <li class="nav-item"> 
                                     <a class="navbar-brand" href="#">Design Register</a> 
                               </li>         -->
-                              <li class="nav-item active">
+                              <li class="nav-item" id="nav-item">
                               <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                               </li>
                               <% if(!currentUser){%>
-                              <li class="nav-item">
+                              <li class="nav-item" id="nav-item">
                               <a class="nav-link" href="/login" >Login</a>   
                               </li>
-                              <li class="nav-item">
+                              <li class="nav-item" id="nav-item">
                                     <a href="/register" class="nav-link">Sign Up</a>   
                               </li>
                               <li class="nav-item pl-3">
                                           <a class="btn btn-warning" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample" >
-                                                <i class="fas fa-search" ></i>   <strong >SEARCH</strong> 
+                                                <i class="fas fa-search" ></i>   <strong id="search-text" >SEARCH</strong> 
                                           </a>   
                                           <div class="collapse" id="collapseExample">
                                                       <form class="form-inline" action="/designs" method="GET">
@@ -210,8 +210,8 @@
                                                             <div class="form-group">
                                                                   <div id="form-search-input">
 
-                                                                              <label id="label-search">Click to search</label> 
-                                                                         <input type="submit"  class="btn btn-outline-warning btn-lg btn-block" value="Search">
+                                                                              <label id="search-text">Click to search</label> 
+                                                                         <input type="submit"  class="btn btn-outline-warning btn-lg btn-block" value="Search" id="search-text">
                                                                         
                                                                   </div>       
                                                             </div>      
@@ -228,16 +228,16 @@
                                           
                                     </li> 
                               <% } else { %>
-                              <li class="nav-item">
+                              <li class="nav-item" id="nav-item">
                                     <a href="/designs/new" class="nav-link">New Design</a>   
                               </li>
-                              <li class="nav-item">
+                              <li class="nav-item" id="nav-item">
                                     <a href="/logout" class="nav-link">Logout</a> 
                               </li>
                               
                               <li class="nav-item pl-3">
                                     <a class="btn btn-warning" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample" >
-                                          <i class="fas fa-search" ></i>   <strong >SEARCH</strong> 
+                                          <i class="fas fa-search" ></i>   <strong id="search-text">SEARCH</strong> 
                                     </a>
                                     <div class="collapse" id="collapseExample">
                                           <div class="form-inline">  

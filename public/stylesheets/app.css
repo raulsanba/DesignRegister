@@ -18,23 +18,64 @@
     
 }
 
-#index-container {
-    padding-left: 53;
-    padding-top: 20;
-}
-
-#card-header {
-    font-weight: bold;
-    color:dimgrey ;
+#card-footer {
+    background-image: linear-gradient(rgb(115, 144, 199) 0px, rgb(6, 59, 128) 100%);
+    font-family: 'ITC Avant Garde Gothic Com', Bold Condensed, Book Condensed;
     
 }
 
+#card-body {
+    background-image: linear-gradient(rgb(240, 243, 244) 0px, rgb(173, 177, 177) 100%);
+    font-family: 'ITC Avant Garde Gothic Com', Bold Condensed, Book Condensed;
+
+}
+
+#card-footer-text {
+    color: whitesmoke;
+    
+
+}
+
+a.nav-link {
+    
+    font-family: 'ITC Avant Garde Gothic Com', Bold Condensed, Book Condensed;
+    font-weight: bold;
+}
+
+.navbar-text {
+    color:black ;
+    font-family: 'ITC Avant Garde Gothic Com', Bold Condensed, Book Condensed;
+}
+
+#search-text {
+    font-family: 'ITC Avant Garde Gothic Com', Bold Condensed, Book Condensed;
+
+}
+
+#index-container {
+    padding-left: 53;
+    padding-top: 20;
+    background-image: linear-gradient( rgb(211,211,211) 0px, rgb(255, 255, 255) 100%);
+    
+} 
+
+#card-header {
+    font-weight: bold;
+    color:black ;
+    background-image: linear-gradient(rgb(153, 207, 128) 0px, rgb(57, 163, 82) 100%);
+    font-family: 'ITC Avant Garde Gothic Com', Bold Condensed, Book Condensed;
+    
+}
+
+
+
 #search-field {
     padding: 10px;
+    
 }
 
 #label-search {
-    color: darkgrey;
+    color: white;
     padding-bottom: 3px;
 }
 
@@ -43,7 +84,19 @@
 }
 
 #logo-text {
-    /* font-family: 'Orbitron', sans-serif; */
+    font-family: 'ITC Avant Garde Gothic Com', Bold Condensed, Book Condensed;
     font-size: 20;
+    color: #014595;
+    padding-right: 10px;
+
+}
+
+#logo-text2 {
+    font-family: 'ITC Avant Garde Gothic Com', Bold Condensed, Book Condensed;
+    color: #2a9342;
+}
+
+#main-navbar {
+    background-color: lightgray;
 
 }

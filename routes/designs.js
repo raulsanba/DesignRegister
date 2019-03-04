@@ -3,29 +3,23 @@ var router = express.Router();
 var Design = require(".././models/design");
 var User = require(".././models/user");
 var multer = require('multer');
-// var upload = multer ({ dest: 'uploads/'});
 
-//UPLOAD IMAGES
-router.use(multer({
-    dest: 'uploads/'
-}).single('filename'));
 
+///UPLOAD IMAGES ROUTES////////
 router.get("/uploads", function(req, res){
     res.render("uploads");
 });
 
 router.post("/uploads", function(req, res){
-    req.flash("image", "Image uploaded");
+    req.flash("image", "File uploaded");
     res.redirect("/designs");
 });
-////////////////
+///////////////////////////////
+
 //INDEX ROUTES
 router.get("/designs", function(req, res){
     var noMatch = null;
-    
-     
-
-    
+        
         if(req.query.region || req.query.sharepointid || req.query.designid || req.query.so || req.query.type || req.query.headtype || req.query.apwidth || req.query.apheight || req.query.systemtype || req.query.reject || req.query.convinheight || req.query.convoutheight || req.query.convlength || req.query.handing || req.query.belttype || req.query.moagent || req.query.enduser || req.query.product || req.query.packaging || req.query.notes  || req.query.engineer) {
         const regex = new RegExp(escapeRegex(req.query.region), 'gi');
         const regex2 = new RegExp(escapeRegex(req.query.sharepointid), 'gi');
@@ -49,11 +43,7 @@ router.get("/designs", function(req, res){
         const regex20 = new RegExp(escapeRegex(req.query.notes), 'gi');
         // const regex21 = new RegExp(escapeRegex(req.query.date), 'gi');
         const regex22 = new RegExp(escapeRegex(req.query.engineer), 'gi');
-      
-
-
-     
-       
+    
         Design.find({$and:[{"region": regex }, {"sharepointid": regex2 }, {"designid": regex3 }, {"so": regex4 }, {"type": regex5 }, {"headtype": regex6 }, {"apwidth": regex7 }, {"apheight": regex8 }, {"systemtype": regex9 }, {"reject": regex10 }, {"convinheight": regex11 }, {"convoutheight": regex12 }, {"convlength": regex13 }, {"handing": regex14 }, {"belttype": regex15 }, {"moagent": regex16 }, {"enduser": regex17 }, {"product": regex18 }, {"packaging": regex19 }, {"notes": regex20 }, {"engineer": regex22 }]} , function(err, founddesigns){   
         if(err){
                console.log(err);

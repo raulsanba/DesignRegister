@@ -10,20 +10,26 @@ var LocalStrategy = require("passport-local");
 var Design = require("./models/design");
 var User = require("./models/user");
 var seedDB = require("./seed");
+var multer = require('multer');
+var storage = multer.diskStorage({
+    destination: 'uploads/',
+    filename: (req, file, cb) => {
+        cb(null, file.originalname);
+    }
+});
+var upload = multer({
+    storage: storage,
+    dest: 'uploads/'
+}).single('filename');
 
+app.use(upload);
 
 /////////////////////////////////////////////////
 var commentRoutes = require("./routes/comments");
 var designRoutes = require("./routes/designs");
 var indexRoutes = require("./routes/index");
-
-
-
-
 //APP CONFIG
 var url = process.env.DATABASEURL || "mongodb://localhost/designregister_app";
-
-
 mongoose.connect(url, {useNewUrlParser: true});
 
 app.set("view engine", "ejs");
@@ -50,9 +56,12 @@ passport.deserializeUser(User.deserializeUser());
 //esto pasa user a todos los archivos
 app.use(function(req, res, next){
     res.locals.currentUser = req.user;
-    // res.locals.message = req.flash("error");
     next();
 });
+
+//UPLOAD IMAGES
+// app.use(multer());
+
 
 app.use(commentRoutes);
 app.use(designRoutes);
