@@ -11,18 +11,8 @@ var Design = require("./models/design");
 var User = require("./models/user");
 var seedDB = require("./seed");
 var multer = require('multer');
-var storage = multer.diskStorage({
-    destination: 'uploads/',
-    filename: (req, file, cb) => {
-        cb(null, file.originalname);
-    }
-});
-var upload = multer({
-    storage: storage,
-    dest: 'uploads/'
-}).single('filename');
+var path = require('path');
 
-app.use(upload);
 
 /////////////////////////////////////////////////
 var commentRoutes = require("./routes/comments");
@@ -34,6 +24,7 @@ mongoose.connect(url, {useNewUrlParser: true});
 
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
+app.use('/uploads',express.static("uploads"));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(methodOverride("_method"));
 app.use(expressSanitizer());
@@ -61,7 +52,18 @@ app.use(function(req, res, next){
 
 //UPLOAD IMAGES
 // app.use(multer());
+var storage = multer.diskStorage({
+    destination: 'uploads/',
+    filename: (req, file, cb) => {
+        cb(null, file.fieldname);
+    }
+});
+var upload = multer({
+    storage: storage,
+    dest: 'uploads/'
+}).single('filename');
 
+app.use(upload);
 
 app.use(commentRoutes);
 app.use(designRoutes);

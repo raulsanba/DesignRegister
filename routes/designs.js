@@ -7,7 +7,7 @@ var multer = require('multer');
 
 ///UPLOAD IMAGES ROUTES////////
 router.get("/uploads", function(req, res){
-    res.render("uploads");
+    res.render("uploads", {design: req.body});
 });
 
 router.post("/uploads", function(req, res){
